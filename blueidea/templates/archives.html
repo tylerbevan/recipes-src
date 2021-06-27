@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Archives for {{ SITENAME }}</h1>
+
+<dl>
+{% for category, articles in categories %}
+    <dt>{{ category.name }}</dt>
+{% for article in articles %}
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+{% endfor %}
+{% endfor %}
+</dl>
+</section>
+{% endblock %}
